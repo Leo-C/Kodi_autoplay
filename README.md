@@ -3,7 +3,7 @@
 
 ### Introduction
 
-**Autoplay for Kodi** is a script to play a list at startup of Kodi, to use it in Kiosk mode.  
+**Autoplay for Kodi** is a script to play automatically media file at startup of Kodi (using it in Kiosk mode).  
 It starts a media file or a playlist from external storage (USB or HD disk) or locally, if no playlist is found on external storage.  
 
 
