@@ -3,8 +3,8 @@
 
 ### Introduction
 
-**Autoplay for Kodi** is a script to play automatically media file at startup of Kodi (using it in Kiosk mode).  
-It starts a media file or a playlist from external storage (USB or HD disk) or locally, if no playlist is found on external storage.  
+**Autoplay for Kodi** is a script to play automatically media file and/or show photos at startup of Kodi (using it in Kiosk mode).  
+It play a media file or a playlist and show photos from external storage (USB drive), or locally if no playlist is found on external storage.  
 
 
 ### Installation
@@ -14,13 +14,34 @@ It starts a media file or a playlist from external storage (USB or HD disk) or l
 
 ### Configuration
 
-The script can be customized changing some variables (if different than default):
+The script can be customized changing some variables (if different than default).  
+It's possible also to show some photos listening music, defining:  
 
-* `LOCAL_VIDEO_PATH` store path for local playlist (default `/storage/.kodi/userdata`)
+* a playlist only with music
+* a slideshow config file
+
+
+Common variables:
+
+* `LOCAL_VIDEO_PATH` store path for local playlist and/or photo cfg file (default `/storage/.kodi/userdata`)
 * `EXT_MEDIA_PATH` store path for external storage (default `/media`)
-* `AUTO_PLAYLIST` store name of playlist (or file) to play (default `auto.m3u`)
+
+For media files:
+
+* `PLAYLIST` store name of playlist (or file) to play (default `auto.m3u`)
 
 Using a playlist is preferred, because if file to play change, only `.m3u` playlist must be modified without change  python script
+
+For photos:
+
+* `SLIDE_CFG` is config file for slideshow (default `photos.cfg`)
+
+this config file is a text file with key-value structure:
+
+`#Comment`  
+`dir=<slideshow path>` #mandatory  
+`subdirs=[1|0]` #optional (default = no)  
+`random=[1|0]` #optional (default = yes); if not random photos show in alphabetic order  
 
 
 ### Debug
@@ -35,3 +56,4 @@ This permit debug without restarting Kodi; logs are in `/storage/.kodi/temp/kodi
 * [Autoexec for Kodi](https://kodi.wiki/view/Autoexec.py)
 * [Python libraries for Kodi](https://codedocs.xyz/xbmc/xbmc/group__python.html)
 * [Built-in functions for Kodi](https://kodi.wiki/view/List_of_built-in_functions)
+* [List of booleans conditions](https://kodi.wiki/view/List_of_boolean_conditions)
